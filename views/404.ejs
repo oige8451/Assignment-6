@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Lego Collection</title>
+</head>
+<body>
+    <%- include('partials/navbar', {page: ''}) %>
+    <div class="container mx-auto">
+        <div class="hero-content text-center">
+            <h1 class="text-4xl font-bold">404 - Page Not Found</h1>
+            <p class="mt-4 text-lg"><%= message %></p>
+            <img src="https://i.pinimg.com/564x/73/b6/6d/73b66d9790c99f0bb027f5197e94870b.jpg" alt="404 Image" class="mx-auto mt-6">
+            <a href="/" class="btn btn-primary mt-4">Go Back Home</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle the dropdown
+        document.querySelector('.dropdown summary').addEventListener('click', function() {
+            document.querySelector('.dropdown-content').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Lego Collection</title>
+</head>
+<body>
+    <%- include('partials/navbar', {page: ''}) %>
+    <div class="container mx-auto">
+        <div class="hero-content text-center">
+            <h1 class="text-4xl font-bold">500 Internal Server Error</h1>
+            <p class="mt-4 text-lg"><%= message %></p>
+            <img src="https://www.doofinder.com/main-files/uploads/2019/09/error-500-doofinder.jpg" alt="500 Image" class="mx-auto mt-6">
+            <a href="/" class="btn btn-primary mt-4">Go Back Home</a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle the dropdown
+        document.querySelector('.dropdown summary').addEventListener('click', function() {
+            document.querySelector('.dropdown-content').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

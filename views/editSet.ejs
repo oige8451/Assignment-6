@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Collection</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <%- include('partials/navbar', {page: '' }) %>
+
+  <div class="container mx-auto">
+    <div class="hero-content text-center">
+    <h1 class="text-2xl font-bold mb-4">Edit Set: <%= set.name %></h1>
+  </div>
+    
+    <form action="/lego/editSet" method="POST">
+     <input type="hidden" name="set_num" value="<%= set.set_num %>">
+      
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="text" id="name" name="name" value="<%= set.name %>" required class="input-field">
+      </div>
+      
+      <div class="mb-4">
+        <label for="year" class="block text-sm font-medium text-gray-700">Year</label>
+        <input type="number" id="year" name="year" value="<%= set.year %>" required class="input-field">
+      </div>
+      
+      <div class="mb-4">
+        <label for="num_parts" class="block text-sm font-medium text-gray-700">Number of Parts</label>
+        <input type="number" id="num_parts" name="num_parts" value="<%= set.num_parts %>" required class="input-field">
+      </div>
+      
+      <div class="mb-4">
+        <label for="img_url" class="block text-sm font-medium text-gray-700">Image URL</label>
+        <input type="text" id="img_url" name="img_url" value="<%= set.img_url %>" required class="input-field">
+      </div>
+      
+      <div class="mb-4">
+        <label for="theme_id" class="block text-sm font-medium text-gray-700">Theme</label>
+        <select id="theme_id" name="theme_id" required class="input-field">
+          <% themes.forEach(theme => { %>
+            <option <%= (set.theme_id == theme.id)? "selected" : "" %> value="<%= theme.id %>">
+              <%= theme.name %>
+            </option>
+          <% }) %>
+        </select>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Update Set</button>
+      <a href="/lego/deleteSet/<%= set.set_num %>" class="btn btn-primary">
+        Delete Set
+    </a>
+    <a href="#" onclick="history.back(); return false;" class="btn btn-primary">
+      Go Back
+  </a>
+
+    </form>
+  </div>
+</body>
+</html>

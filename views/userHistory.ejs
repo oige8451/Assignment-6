@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <title>User History</title>
+</head>
+<style>
+    .card{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 4px; /* 5px rounded corners */
+    background-color: #e2e2e2;
+    border-style: 70px hidden;
+}
+</style>
+
+<body>
+    <%- include('partials/navbar', {page: '/userHistory'}) %>
+    <div class="container mx-auto mt-10">
+        <div class="card bg-base-100 shadow-lg">
+            <div class="card-body">
+                <h1 class="text-4xl text-center"><%= session.user.userName %></h1>
+                <p class="text-center mb-4">UserHistory :<%= session.user.email %></p>
+    </div>
+</div>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Login Date/Time</th>
+                <th>Client Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% session.user.loginHistory.forEach(history => { %>
+            <tr>
+                <td><%= new Date(history.dateTime).toLocaleString() %></td>
+                <td><%= history.userAgent %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>

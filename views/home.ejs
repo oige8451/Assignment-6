@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/main.css">
+  <title>Lego Collection</title>
+</head>
+
+<body>
+  <%- include('partials/navbar', {page: '/'}) %>
+  
+  <div class="container mx-auto">
+    <!-- hero section -->
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+      <h1 class="text-5xl font-bold text-center text-violet-800">Welcome to the Lego Collection</h1>
+      <p class="py-6">Explore our extensive collection of Lego sets.</p>
+      <a href="/lego/sets" class="btn btn-primary">Explore Sets</a>
+    </div>
+      <!-- grid section-->
+      <div class="grid grid-flow-col auto-cols-max">
+
+        <div class="card bg-base-100 shadow-xl flex flex-col justify-between" style="height: 480px; width: 300px;">
+          <figure>
+            <img class="w-full  h-48 object-cover" src="https://cdn.rebrickable.com/media/sets/003-1.jpg" alt="Master Mechanic Set" />
+          </figure>
+          <div class="card-body flex flex-col">
+            <h2 class="card-title">Master Mechanic Set</h2>
+            <p>This set was released in America (USA/CAN) by Samsonite in 1966. It was never released in Europe.</p>
+            <div class="card-actions justify-end mt-auto">
+              <a href="/lego/sets/003-1" class="btn btn-primary">View Set 003-1</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="card bg-base-100 shadow-xl flex flex-col justify-between" style="height: 480px; width: 540px;">
+          <figure>
+            <img class="w-full " src="https://cdn.rebrickable.com/media/sets/010423-1.jpg" alt="The Majestic Horse" />
+          </figure>
+          <div class="card-body">
+            <h2 class="card-title">The Majestic Horse</h2>
+            <p>Designed by previous 2017 Lego Masters UK winners Nathan Dias and Steve Guinness.</p>
+            <div class="card-actions justify-end mt-auto">
+              <a href="/lego/sets/010423-1" class="btn btn-primary">View Set 010423-1</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl flex flex-col justify-between" style="height: 480px; width: 540px;">
+          <figure>
+            <img class="w-full h-48 object-cover" src="https://cdn.rebrickable.com/media/sets/0241187567-1.jpg"
+              alt="Ninjago: Build Your Own Adventure" />
+          </figure>
+          <div class="card-body ">
+            <h2 class="card-title">Ninjago: Build Your Own Adventure</h2>
+            <p>Written by Scarlett O'Hara,Publisher: Dorling Kindersley (August 2015)</p>
+            <div class="card-actions justify-end mt-auto">
+              <a href="/lego/sets/0241187567-1" class="btn btn-primary">View Set 0241187567-1</a>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+  <script>
+    // JavaScript to handle the dropdown
+    document.querySelector('.dropdown summary').addEventListener('click', function () {
+      document.querySelector('.dropdown-content').classList.toggle('hidden');
+    });
+  </script>
+</body>
+
+</html>

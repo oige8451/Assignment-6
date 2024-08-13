@@ -1,0 +1,17 @@
+
+.input {
+    width: 100%; /* Full width of the container */
+    padding: 0.5em 1em;
+    border: #0c0d0c;
+}
+.card{
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 4px; /* 5px rounded corners */
+    background-color: #e2e2e2;
+    border-style: 70px hidden;
+}
+
+.block{
+    margin-top: 20px;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Lego Collection - Log In</title>
+</head>
+<body>
+    <%- include('partials/navbar', {page: '/login'}) %>
+    <div class="static container mx-auto mt-10">
+        <div class="static card bg-base-100 shadow-lg">
+            <div class="card-body">
+                <h1 class="text-4xl text-center">Log In</h1>
+                <p class="text-center mb-4">Please provide your credentials below</p>
+                
+                 <form action="/login" method="POST" class="space-y-4">
+                    <div>
+                        <label for="userName" class="block">User Name</label>
+                        <input type="text" name="userName" placeholder="User Name" value="<%= userName || '' %>" class="input input-bordered w-full" required />
+                    </div>
+                    <div>
+                        <label for="password" class="block">Password</label>
+                        <input type="password" name="password" placeholder="Password" class="input input-bordered w-full" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">Login</button>
+                </form>
+                 
+
+                  <% if (errorMessage) { %>
+                    <div class="alert alert-error mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span><%= errorMessage %></span>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
